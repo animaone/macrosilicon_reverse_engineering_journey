@@ -41,6 +41,9 @@ These apks could them be decompiled (and yes, I am leaving the most important pa
 
 Having the source helped to understand the main routines of the USB driver, and figuring out why my approach was not working(or not)...
 
+![image](https://user-images.githubusercontent.com/31348553/141846163-ced9fa8a-6093-4691-944f-32ce3e60545b.png)
+
+
 So... the device starts with some routines for reading the monitor configurations and uses the read and write prefixes for doing configurations 
 
 * \xB5 [offset]
