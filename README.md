@@ -5,26 +5,46 @@
 
 Everything started when I bought the device. I wanted to get something more related to fl2k/fl2000 chipset, but as most clones you will find in the wild, there will not be a lot of them with fl2000 chipset.
 
-But, instead of trowing it away I decided to do something, maybe trying to make a driver for linux.
+But, instead of trowing it away I decided to do something, maybe trying to make a driver for Linux.
 
-Started googling some information about it and got its usb propperties:    __ID 534d:6021 MACROSILICON usb extscreen__
+Started googling some information about it and got its usb properties:    __ID 534d:6021 MACROSILICON usb extscreen__
 
-I captured the usb packets and tried to use the usb with python without success.
+I captured the USB packets and tried to use the USB with python without success.
 
-It was when I found the tools ms-dfjsdofj, which had some functiosn that allowed me to read and write specific bytes of the device memory. Also found the device has an 8051 microcontroller (maybe more than one?)
+It was when I found the tools ms-dfjsdofj, which had some functions that allowed me to read and write specific bytes of the device memory. Also found the device has an 8051 microcontroller (maybe more than one?)
 
-Yes? I just wanted to play with a driver and sudenlly found I could write in the device memory... Amazing!
+Yes? I just wanted to play with a driver and suddenly found I could write in the device memory... Amazing!
 
 Now, let the game begin.
 
-It didn't took to much time for I to find that the device had some memory areas that couldn't be written. After some time playing I did get the following memory map:
+It didn't took to much time for I to find that the device had some memory areas that couldn't be written. After some time playing, I did get the following memory map:
 
-0x0000 - 0xbfff -> read-only memory
-0xc000 - 0xdfff -> writable ram memory
-0xe000 - 0xffff -> can/cannot be written it depends (register/space for communication memory maybe?)
+* 0x0000 - 0xbfff -> read-only memory
+* 0xc000 - 0xdfff -> writable ram memory
+* 0xe000 - 0xffff -> can/cannot be written it depends (registers or space for communication?)
 
-It seems that all Macrosilicon devices share some type of similarities when it is related to data reading/writing, but... lets do something else...
+It seems that all Macrosilicon devices share some type of similarities when it is related to data reading/writing, but... let's do something else...
 
-I managed to dump the device code (will describe this other not-so-trivial trick here), done some reverse-engineering of its routines, and... then I suddenly found a driver for it in 
+I managed to dump the device code (will describe this other not-so-trivial trick later), done some reverse-engineering of its routines, and... then I suddenly found a driver for it, distributed by two Chinese sellers, and also an older version in a GitHub repository. I am leaving the apk files here if you have some curiosity for installing it in your phone (warning!). I tested the driver without success (it runs for some time with a bit o delay, and if I try to rotate the screen, it freezes... Seems to be a hardware-related bug..., bad news: the driver is buggy :( )
+
+These apks could them be decompiled (and yes, I am leaving the most important part of its source code here). You can also extract it with Jadx if you want (I don't recommend trying to recompile it, it may become a long-term project, try to edit the smali files with apktool instead).
+
+Having the source helped to understand the main routines of the USB driver, and figuring out why my approach was not working(or not)...
+
+So... the device starts with some routines for reading the monitor configurations and uses the read and write prefixes for doing configurations 
+
+* \xB5 [offset]
+* \xB6 [offset]
+
+After this it uses \xA6 + commands for setting video on, video input on, and power the monitor on
+
+After this point, the frames start to be sent... (maybe there is some synchronization feedback going on here that I didn't figure out yet?)
+
+As most persons that played with these devices have done their research with devices that convert VIDEO-TO-USB (instead of USB-TO-VIDEO), I don't have a lot of information about the protocol used for writing the video frames... (maybe some weird tile-based compressed data?)
+
+But it is just a matter of time until I can figure out how to do it. Since the apk source code is here for helping.
+
+When I see the assembly code, I just feel like I need to reach deeper levels of insanity, what If I can? ;)
 
 # \[TO BE CONTINUED\]
+
