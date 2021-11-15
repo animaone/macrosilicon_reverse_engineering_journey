@@ -11,7 +11,7 @@ Started googling some information about it and got its usb properties:    __ID 5
 
 I captured the USB packets and tried to use the USB with python without success.
 
-It was when I found the tools ms-dfjsdofj, which had some functions that allowed me to read and write specific bytes of the device memory. Also found the device has an 8051 microcontroller (maybe more than one?)
+It was when I found the github repository for __ms210x-tools__, which had some functions that allowed me to read and write specific bytes of the device memory. Also found the device has an 8051 microcontroller (maybe more than one?)
 
 Yes? I just wanted to play with a driver and suddenly found I could write in the device memory... Amazing!
 
