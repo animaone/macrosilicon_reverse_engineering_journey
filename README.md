@@ -1,5 +1,8 @@
 # this repository will document my journey to reverse-engineer a usb-to-vga adapter from Macrosilicon
 
+![image](https://user-images.githubusercontent.com/31348553/141840657-444c6f33-fbc0-47b8-8229-1087a71cb1d0.png)
+
+
 Everything started when I bought the device. I wanted to get something more related to fl2k/fl2000 chipset, but as most clones you will find in the wild, there will not be a lot of them with fl2000 chipset.
 
 But, instead of trowing it away I decided to do something, maybe trying to make a driver for linux.
