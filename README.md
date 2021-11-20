@@ -67,7 +67,7 @@ But... what should I do now?
 ![image](https://user-images.githubusercontent.com/31348553/142734625-ff17d98c-65a3-4709-9071-495fed70afee.png)
 
 
-I need a more interesting way to execute code in this device, since the method I used corrupts most of the code and destroys the execution flow...
+Also, I need a more interesting way to execute code in this device
 
 
 # \[TO BE CONTINUED\]
