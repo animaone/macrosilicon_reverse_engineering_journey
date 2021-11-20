@@ -8,7 +8,7 @@
 
   
 
-
+# [Round I]
 
 ![image](https://user-images.githubusercontent.com/31348553/141840657-444c6f33-fbc0-47b8-8229-1087a71cb1d0.png)
 
@@ -58,6 +58,17 @@ As most persons that played with these devices have done their research with dev
 But it is just a matter of time until I can figure out how to do it. Since the apk source code is here for helping.
 
 When I see the assembly code, I just feel like I need to reach deeper levels of insanity, what If I can? ;)
+
+# [Round II]
+
+After some time looking around I have found the file RegisterMap.java in the apk decompilation. This file is more interesting than ever, and contains lots of "registers" which are like buttons for doing interesting things inside of the processor...
+But... what should I do now?
+
+![image](https://user-images.githubusercontent.com/31348553/142734625-ff17d98c-65a3-4709-9071-495fed70afee.png)
+
+
+I need a more interesting way to execute code in this device, since the method I used corrupts most of the code and destroys the execution flow...
+
 
 # \[TO BE CONTINUED\]
 
