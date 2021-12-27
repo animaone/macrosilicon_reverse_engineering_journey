@@ -1,5 +1,5 @@
 
-### warning! Don't install this .apk file if you don't know what you are doing. I am absolutelly NOT SURE if it is from official sources!
+### warning! Don't install this .apk file if you don't know what you are doing. I am absolutely NOT SURE if it is from official sources!
   
 
 
@@ -21,7 +21,7 @@ Started googling some information about it and got its usb properties:    __ID 5
 
 I captured the USB packets and tried to use the USB with python without success.
 
-It was when I found the github repository for __ms210x-tools__, which had some functions that allowed me to read and write specific bytes of the device memory. Also found the device has an 8051 microcontroller (maybe more than one?)
+It was when I found the github repository for __ms210x-tools__, which had some functions that allowed me to read and write specific bytes of the device memory. Also found the device has an 8051 micro-controller (maybe more than one?)
 
 Yes? I just wanted to play with a driver and suddenly found I could write in the device memory... Amazing!
 
@@ -37,7 +37,7 @@ It seems that all Macrosilicon devices share some type of similarities when it i
 
 I managed to dump the device code (will describe this other not-so-trivial trick later), done some reverse-engineering of its routines, and... then I suddenly found a driver for it, distributed by two Chinese sellers, and also an older version in a GitHub repository. I am leaving the apk files here if you have some curiosity for installing it in your phone (warning!). I tested the driver without success (it runs for some time with a bit o delay, and if I try to rotate the screen, it freezes... Seems to be a hardware-related bug..., bad news: the driver is buggy :( )
 
-These apks could them be decompiled (and yes, I am leaving the most important part of its source code here). You can also extract it with Jadx if you want (I don't recommend trying to recompile it, it may become a long-term project, try to edit the smali files with apktool instead).
+These apks could them be decompiled (and yes, I am leaving the most important part of its source code here). You can also extract it with Jadx if you want (I don't recommend trying to recompile it, it may become a long-term project, try to edit the .smali files with apktool instead).
 
 Having the source helped to understand the main routines of the USB driver, and figuring out why my approach was not working(or not)...
 
