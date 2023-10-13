@@ -3,7 +3,7 @@
   
 
 
-# this repository will document my journey to reverse-engineer a usb-to-vga adapter from Macrosilicon
+# reverse-engineering a usb-to-vga adapter from Macrosilicon
 
 
   
