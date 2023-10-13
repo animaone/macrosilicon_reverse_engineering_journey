@@ -74,6 +74,3 @@ But... what should I do now?
 
 I think I had enought of this project, and stopped it a long time ago. This project is not maintained anymore. Feel free to thank everyone that developed software for this device, and search google and github before asking. Byeeee :)
 
-
-# \[TO BE CONTINUED\]
-
