@@ -66,8 +66,13 @@ But... what should I do now?
 
 ![image](https://user-images.githubusercontent.com/31348553/142734625-ff17d98c-65a3-4709-9071-495fed70afee.png)
 
+# [ADDED "DOCUMENTATION"]
 
-Also, I need a more interesting way to execute code in this device
+![image](https://github.com/animaone/macrosilicon_reverse_engineering_journey/assets/31348553/9396119d-ab62-497e-84a1-d0931e47517b)
+
+# [THE END:]
+
+I think I had enought of this project, and stopped it a long time ago. This project is not maintained anymore. Feel free to thank everyone that developed software for this device, and search google and github before asking. Byeeee :)
 
 
 # \[TO BE CONTINUED\]
